@@ -22,9 +22,8 @@ man/
 *.dylib
 *.dll
 
-# Fortran module files
-*.mod
-*.smod
+#Compiled QML files
+*.qmlc
 
 # Compiled Static libraries
 *.lai
