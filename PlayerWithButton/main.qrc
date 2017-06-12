@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>skin/basic_2.qml</file>
+        <file>skin/pause.png</file>
+        <file>skin/play.png</file>
+    </qresource>
+</RCC>
