@@ -3,5 +3,8 @@
         <file>skin/basic_2.qml</file>
         <file>skin/pause.png</file>
         <file>skin/play.png</file>
+        <file>skin/menu.qml</file>
+        <file>skin/page_camHD2.qml</file>
+        <file>skin/Page_camHD.qml</file>
     </qresource>
 </RCC>

@@ -71,25 +71,6 @@ Rectangle {
         anchors.left : cam_HD3.right
         anchors.leftMargin: 15
     }
-
-   /* VlcVideoSurface {
-        source: vlcPlayer;
-      //  anchors.fill: parent;
-     //   anchors.top: parent.top;
-        anchors.topMargin: 10;/*
-        anchors.left: parent.left;
-        anchors.leftMargin: anchors.topMargin;
-        width: parent.width / 2 - anchors.leftMargin * 2;
-        height: parent.height / 2 - anchors.topMargin * 2;*/
-    //}
-   /* VideoOutput {
-        source: vlcPlayer;
-     //  anchors.top: parent.top;
-        anchors.fill : parent;
-       /* width: parent.width / 2;
-        height: parent.height / 2;
-        opacity: 0.9;*/
-  //  }
     VlcVideoSurface {
         source: vlcPlayer;
         anchors.fill : parent;
@@ -101,52 +82,4 @@ Rectangle {
         height: parent.height / 2 - anchors.bottomMargin * 2;
         opacity: 0.9;*/
     }
-    /*MouseArea {
-        hoverEnabled: true
-        anchors.fill: parent
-        RowLayout {
-            id: toolbar
-            opacity: .55
-            spacing: 10
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: parent.containsMouse ? spacing : -height
-            anchors.leftMargin: spacing * 1.5
-            anchors.rightMargin: spacing * 1.5
-            Behavior on anchors.bottomMargin { PropertyAnimation { duration: 250} }
-            Rectangle {
-                height: 24
-                width: height
-                radius: width * 0.25
-                color: 'black'
-                border.width: 1
-                border.color: 'white'
-                Image {
-                    source: vlcPlayer.playing ? "pause.png" : "play.png"
-                    anchors.centerIn: parent
-                }
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: vlcPlayer.togglePause()
-                }
-            }
-            Rectangle {
-                Layout.fillWidth: true
-                height: 10
-                color: 'transparent'
-                border.width: 1
-                border.color: 'white'
-                anchors.verticalCenter: parent.verticalCenter
-                Rectangle {
-                    width: (parent.width - anchors.leftMargin - anchors.rightMargin) * vlcPlayer.position
-                    color: 'white'
-                    anchors.margins: 2
-                    anchors.top: parent.top
-                    anchors.left: parent.left
-                    anchors.bottom: parent.bottom
-                }
-            }
-        }
-    }*/
 }
