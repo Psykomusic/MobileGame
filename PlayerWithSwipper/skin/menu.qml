@@ -3,27 +3,39 @@ import QtQuick.Layouts 1.0
 import QmlVlc 0.1
 import QtMultimedia 5.0
 import QtQuick.Controls 2.2
+import "main.js" as JsEngine
+import ConfigCamera 1.0
 
 Rectangle {
     id: menu
     color: 'grey';
-    width : 1920
-    height: 1080
+    width : 640
+    height: 480
+
+    ConfigCamera{
+        id: configCamera;
+    }
 
     SwipeView {
         id: view
-        currentIndex: index
+        currentIndex: 1
         anchors.fill: parent
-        orientation:  Qt.Vertical
+        function loadurl(i){
+            var url = configCamera.urlAvailable(i);
+            return url;
+        }
+        Component.onCompleted: configCamera.initConfig();
+        property int length : configCamera.sizeConfig()
+      //  orientation:  Qt.horizontal
         Repeater {
             id:pageRepeater
-            model: 5
+            model: view.length
             Loader {
-                active: SwipeView.isCurrentItem || SwipeView.isNextItem || SwipeView.isPreviousItem
+                active: SwipeView.isCurrentItem // || SwipeView.isNextItem || SwipeView.isPreviousItem
                 sourceComponent: Page_camHD {
-                    Component.onCompleted: console.log("created:", index)
-                    Component.onDestruction: console.log("destroyed:", index)
-                    index : view.currentIndex;
+                    Component.onCompleted: JsEngine.swipe(index)
+                    Component.onDestruction: JsEngine.deswipe(index)
+                    urlStream: loadurl(view.currentIndex);
                     PageIndicator {
                         height: 100
                         width: height

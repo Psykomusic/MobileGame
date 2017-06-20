@@ -6,5 +6,8 @@
         <file>skin/menu.qml</file>
         <file>skin/page_camHD2.qml</file>
         <file>skin/Page_camHD.qml</file>
+        <file>skin/main.js</file>
+        <file>ressources/cam_conf.cf</file>
+        <file>ressources/curr_conf.cf</file>
     </qresource>
 </RCC>

@@ -1,0 +1,10 @@
+%192.168.50.31 rtsp://192.168.50.31:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264 CAMHD-2AFT
+%8.8.8.8 http://mycool.movie.com/test.mov cambidon
+%8.8.8.9 http://mycool.movie.com/test.mov cambidon1
+%8.8.8.10 http://mycool.movie.com/test.mov cambidonAV
+%8.8.8.8 http://mycool.movie.com/test.mov cambidon
+%192.168.50.31 rtsp://192.168.50.31:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264 CAMHD-2AFT
+%8.8.8.8 http://mycool.movie.com/test.mov cambidon
+%192.168.50.30 rtsp://192.168.50.30:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264 CAMHD-2FWD
+192.168.50.31 rtsp://192.168.50.31:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264 CAMHD-2AFT
+192.168.50.30 rtsp://192.168.50.30:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264 CAMHD-2FWD

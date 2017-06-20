@@ -9,26 +9,26 @@ Rectangle {
     width : menu.width
     height: menu.height
 
-    property int index
+    property var urlStream
     property var url : [
-    "rtsp://192.168.50.40:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264",
-    "rtp://192.168.50.2:5368",
-    "rtp://192.168.50.2:5370",
-    "rtp://239.1.172.206:53666",
-    "rtp://239.1.172.207:53668",
-]
+        "rtsp://192.168.50.40:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264",
+        "rtp://192.168.50.2:5368",
+        "rtp://192.168.50.2:5370",
+        "rtp://239.1.172.206:53666",
+        "rtp://239.1.172.207:53668",
+    ]
 
     VlcPlayer {
         id: vlcPlayer;
-       //mrl: "rtsp://192.168.50.40:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264";
-        mrl: url[index]
+        //mrl: "rtsp://192.168.50.40:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264";
+        mrl: urlStream
         function refresh() {
-            vlcPlayer.mrl = url[index];
+            vlcPlayer.mrl = urlStream;
             console.log("refresh:", vlcPlayer.mrl)
         }
     }
     VlcVideoSurface {
-      //  transform: Rotation{origin.x :width/2; origin.y : height/2; angle: 90}
+        //  transform: Rotation{origin.x :width/2; origin.y : height/2; angle: 90}
         source: vlcPlayer;
         width : parent.width
         height: parent.height
@@ -51,16 +51,8 @@ Rectangle {
             MouseArea {
                 anchors.fill: parent
                 onClicked: vlcPlayer.refresh()
+         //       onClicked: test.refresh()
             }
         }
     }
-  /*  Button {
-        id : refresh_button
-        text: "Refresh"
-        onClicked: vlcPlayer.refresh()
-        anchors.bottom: parent.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-    }*/
-
-
 }

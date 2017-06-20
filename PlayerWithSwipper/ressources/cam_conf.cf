@@ -1,0 +1,10 @@
+%Format : IPAdress URLStream Name
+192.168.50.203 rtp://239.1.172.203:53660 CAMHD-1
+192.168.50.204 rtp://239.1.172.204:53662 CAMHD-4AV
+192.168.50.205 rtp://239.1.172.205:53664 CAMHD-4DR
+192.168.50.206 rtp://239.1.172.206:53666 CAMHD-4AR
+192.168.50.207 rtp://239.1.172.207:53668 CAMHD-4G
+192.168.50.203 rtsp://192.168.50.203:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264 CAMTEST
+192.168.50.30 rtsp://192.168.50.30:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264 CAMHD-2FWD
+192.168.50.31 rtsp://192.168.50.31:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264 CAMHD-2AFT
+%8.8.8.8 http://mycool.movie.com/test.mov cambidon

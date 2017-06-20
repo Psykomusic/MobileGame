@@ -4,13 +4,16 @@ include(deps/QmlVlc/QmlVlc.pri)
 
 INCLUDEPATH += deps
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    src/additional_functions.cpp \
+    src/camera.cpp \
+    src/configcamera.cpp \
+    src/pinger.cpp
 
 RESOURCES += main.qrc
 
 OTHER_FILES += \
-    skin/page_camHD2.qml\
-    skin/page_camHD2.qml\
+    skin/Page_camHD.qml\
     skin/basic_2.qml \
     skin/pause.png \
     skin/play.png
@@ -26,3 +29,16 @@ android {
 
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 }
+
+DISTFILES += \
+    skin/menu.qml \
+    skin/Page_camHD.qml \
+    skin/main.js \
+    Ressources/cam_conf.cf \
+    Ressources/curr_conf.cf
+
+HEADERS += \
+    src/additional_functions.hpp \
+    src/camera.hpp \
+    src/configcamera.hpp \
+    src/pinger.hpp

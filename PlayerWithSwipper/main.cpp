@@ -28,24 +28,45 @@
 #include <iostream>
 #include <QmlVlc.h>
 #include <QmlVlc/QmlVlcConfig.h>
-
+#include <qmltest.h>
+#include<QDebug>
+#include "src/configcamera.hpp"
+#include <QResource>
 int main(int argc, char *argv[])
 {
-    RegisterQmlVlc();
-    QmlVlcConfig& config = QmlVlcConfig::instance();
 
+    //QResource::registerResource("");
+    RegisterQmlVlc();
+    qmlRegisterType<ConfigCamera>("ConfigCamera", 1, 0, "ConfigCamera");
+    QmlVlcConfig& config = QmlVlcConfig::instance();
+    ConfigCamera& cameras = ConfigCamera::instance();
 
     //config.setTrustedEnvironment(true);
-   // config.setNetworkCacheTime(900);
+    // config.setNetworkCacheTime(900);
+
+  /*  cameras.currConfig();
+    cameras.checkInfo();
+    cameras.pingAndConf();
+    if(cameras.configIsEmpty())
+    {
+        qDebug() << "QMap is empty, waiting for answer from cam";
+        delay(10);
+    }
+    if(cameras.configIsEmpty())
+    {
+        qDebug() << "No camera";
+        return 0;
+    }
+
+*/
     config.enableHardwareAcceleration(true);
     config.enableAdjustFilter( true );
     config.enableMarqueeFilter( true );
     config.enableLogoFilter( true );
     config.enableDebug( true );
     config.createLibvlcInstance();
-    std::cout << config._networkCacheTime << std::endl;
+   // qDebug() <<"//***************\\"<< config._networkCacheTime<<"//***************\\" ;
     QGuiApplication app(argc, argv);
-
     QQuickView view;
     view.setClearBeforeRendering( false );
     view.setMinimumSize( QSize( 640,480));
