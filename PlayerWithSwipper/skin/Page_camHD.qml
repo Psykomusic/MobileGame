@@ -10,18 +10,11 @@ Rectangle {
     height: menu.height
 
     property var urlStream
-    property var url : [
-        "rtsp://192.168.50.40:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264",
-        "rtp://192.168.50.2:5368",
-        "rtp://192.168.50.2:5370",
-        "rtp://239.1.172.206:53666",
-        "rtp://239.1.172.207:53668",
-    ]
 
-    VlcPlayer {
+     VlcPlayer{
         id: vlcPlayer;
         //mrl: "rtsp://192.168.50.40:8557/OtonomyHdSdiStreaming/2?videoCodecType=H.264";
-        mrl: urlStream
+         mrl: urlStream
         function refresh() {
             vlcPlayer.mrl = urlStream;
             console.log("refresh:", vlcPlayer.mrl)

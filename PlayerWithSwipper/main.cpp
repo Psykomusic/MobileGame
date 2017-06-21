@@ -32,14 +32,17 @@
 #include<QDebug>
 #include "src/configcamera.hpp"
 #include <QResource>
+#include "src/configPlayer.h"
+
 int main(int argc, char *argv[])
 {
 
     //QResource::registerResource("");
     RegisterQmlVlc();
-    qmlRegisterType<ConfigCamera>("ConfigCamera", 1, 0, "ConfigCamera");
+    qmlRegisterType<ConfigPlayer>("ConfigPlayer", 1, 0, "ConfigPlayer");
     QmlVlcConfig& config = QmlVlcConfig::instance();
     ConfigCamera& cameras = ConfigCamera::instance();
+    cameras.initConfig();
 
     //config.setTrustedEnvironment(true);
     // config.setNetworkCacheTime(900);

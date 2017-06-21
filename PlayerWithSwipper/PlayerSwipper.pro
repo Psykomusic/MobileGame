@@ -8,7 +8,8 @@ SOURCES += main.cpp \
     src/additional_functions.cpp \
     src/camera.cpp \
     src/configcamera.cpp \
-    src/pinger.cpp
+    src/pinger.cpp \
+    src/configPlayer.cpp
 
 RESOURCES += main.qrc
 
@@ -41,4 +42,5 @@ HEADERS += \
     src/additional_functions.hpp \
     src/camera.hpp \
     src/configcamera.hpp \
-    src/pinger.hpp
+    src/pinger.hpp \
+    src/configPlayer.h

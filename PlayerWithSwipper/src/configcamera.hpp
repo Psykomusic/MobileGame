@@ -110,6 +110,11 @@ public:
     //! \return QMap<QString, Camera*>&
     QMap<QString, Camera*>& CameraAvailable() const;
 
+    //! \fn ulrsAvailable() const
+    //! \brief Renvoie la référence du QVector urlsAvailable.
+    //! \return QVector&
+    QVector<QString>& getUrlsAvailable();
+
     //! \fn Q_INVOKABLE QString urlAvailable() const
     //! \brief Renvoie une QString contenant l'url de stream d'une camera i.
     //! \return QString

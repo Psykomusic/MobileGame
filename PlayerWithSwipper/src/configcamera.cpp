@@ -159,6 +159,12 @@ QString ConfigCamera::urlAvailable(int index)
     return urlsAvailable[index];
 }
 
+
+QVector<QString>& ConfigCamera::getUrlsAvailable()
+{
+    return urlsAvailable;
+}
+
 void ConfigCamera::refreshUrlsAvalaible()
 {
     if (urlsAvailable.size() != sizeConfig())
